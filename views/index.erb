@@ -1,6 +1,20 @@
-<h1>Welcome to <%= @crm_app_name%>!</h1>
-<p>Main menu</p>
-<ul>
+<!-- <h1>Welcome to <%= @crm_app_name%>!</h1>
+<p>Main menu</p> -->
+<!-- <ul>
   <li><a href="/contacts">View all contacts</a></li>
-  <!-- please complete me with links to other actions -->
-</ul>
+  <!- please complete me with links to other actions -->
+<!-- </ul> -->
+<aside>
+  <h2>There are <span><%= Contact.all.length %></span> contacts.</h2>
+</aside>
+
+<section class="contacts_list">
+  <ul>
+    <% Contact.all.each do |contact| %>
+    <li>
+      <h3><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</h3><br>
+      <a href="">Edit</a> | <a href="">Delete</a>
+    </li>
+    <% end %>
+  </ul>
+</section>

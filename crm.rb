@@ -3,7 +3,7 @@
 # You'll have to implement it from scratch.
 require_relative 'contact'
 require 'sinatra'
-"/contacts/new"
+# "/contacts/new"
 # get '/'do
 #   'erb :index'
 # end
