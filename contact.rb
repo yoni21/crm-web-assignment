@@ -31,16 +31,20 @@ class Contact
     @@contacts
   end
 
+  # def self.find(id)
+  #   found_contact = nil
+  #
+  #   @@contacts.each do |contact|
+  #     if contact.id == id
+  #       found_contact = contact
+  #     end
+  #   end
+  #   found_contact
+  # end
   def self.find(id)
-    found_contact = nil
-
-    @@contacts.each do |contact|
-      if contact.id == id
-        found_contact = contact
-      end
-    end
-    found_contact
+    @@contacts.find { |contact| contact.id == id }
   end
+
   def update(attribute, value)
     if "first_name" == attribute
       @first_name = value
@@ -84,8 +88,11 @@ class Contact
 
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
+  # def delete
+  #   @@contacts.delete(self)
+  # end
   def delete
-    @@contacts.delete(self)
+    @@contacts.delete_if { |contact| contact.id == self.id }
   end
 
   # Feel free to add other methods here, if you need them.
