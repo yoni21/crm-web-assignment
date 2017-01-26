@@ -6,7 +6,7 @@
 </head>
   <body>
     <header>
-      <h1>Welcome to <%= @crm_app_name%>!</h1>
+        <h1>Welcome to <%= @crm_app_name%>!</h1>
       <!-- <h1><%= @crm_app_name %></h1> -->
     </header>
   <!-- <h1>Yonas CRM</h1> -->
@@ -18,11 +18,13 @@
      </ul>
     </nav>
 
-  <%= yield %>
+  <main class="container">
+    <%= yield %>
+  </main>
 
-
-
-  <footer>&copy; Bitmaker 2016</footer>
+  <footer class="footer">
+    <h1>&copy; Bitmaker 2016</h1>
+  </footer>
 
   </body>
 </html>
